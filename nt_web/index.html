@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>计科二班同学一览</title>
+  <style>
+#character-section {
+  height: 100vh; /* 设置容器的高度为视窗高度 */
+  overflow-y: scroll; /* 启用垂直滚动条 */
+}
+  
+    /* 样式可以根据需要进行自定义 */
+  /* Other CSS styles */
+
+  #character-section {
+    /* Other styles */
+    margin-bottom: 20px; /* Add margin-bottom to create space at the bottom */
+    padding-bottom: 20px; /* Add padding-bottom to create space at the bottom */
+  }
+ 
+    #header {
+      background-color: #ffdbf0;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 36px;
+      color: #6c63ff;
+    }
+    
+    #character-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      padding: 20px;
+    }
+    
+    .character-card {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .character-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .character-card img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .character-card img:hover {
+      transform: scale(1.1);
+    }
+    
+    .character-card h2 {
+      font-size: 24px;
+      color: #6c63ff;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+    
+    .character-card p {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    /* 添加粒子特效容器 */
+    #particle-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    /* 添加波纹特效容器 */
+    #ripple-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
+    
+    /* 添加波纹特效样式 */
+    .ripple-effect {
+      position: absolute;
+      background-color: rgba(108, 99, 255, 0.3);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: rippleAnimation 0.5s linear;
+    }
+    
+    @keyframes rippleAnimation {
+      to {
+        transform: scale(3);
+        opacity: 0;
+      }
+    }
+    
+    /* 添加粒子特效样式 */
+    .particle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background-color: rgba(108, 99, 255, 0.8);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particleAnimation 1s linear;
+    }
+    
+    @keyframes particleAnimation {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(calc(-100vh + 5px)) translateX(calc(-100vw + 5px));
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>计科二班同学一览</h1>
+  </div>
+  
+  <div id="character-section">
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/jaWSUd9B8zrkhfy.png" alt="张梓涵">
+      <h2>张梓涵</h2>
+      <p>爱好:kpop&jpop女团粉，推aespa winter/乃木坂46 菅原咲月，另外有一点二次元含量</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/9t2OmjKlso1G5cH.png" alt="潘雨馨">
+      <h2>潘雨馨</h2>
+      <p>mbti 是entj所以计划型人格但ddl完成得很艰辛，总是困，非常爱玩。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/HGU7jIdSLsroQqT.png" alt="车奎洋">
+      <h2>车奎洋</h2>
+      <p>记住，我爸是湖南最大的黑帮老大</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/h4aKIE9JsCNyPX5.png" alt="王令博">
+      <h2>王令博</h2>
+      <p>又帅又可爱又善良的小呆呆~非常受到大家的喜爱。喜欢打游戏</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/3bzlhHuaeRy7JP4.png" alt="曾罗钰">
+      <h2>曾罗钰</h2>
+      <p>伟大的学委大人，酒鬼，曾一口闷一瓶二锅头。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/Z1Oruq5UpMGYTVj.png" alt="童奕">
+      <h2>童奕</h2>
+      <p>非常乖巧非常聪明的童童，不爱说话，但敲代码很厉害。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/FGECRpzoXbTwei4.png" alt="张锡文">
+      <h2>张锡文</h2>
+      <p>乐天派，特爱玩，什么都喜欢凑凑热闹，喜欢唱跳（物理上的）Rap，可惜不太会篮球。不要在生活中撒气，一起去户外撒野～</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/ZJiwtjQ35XpMKf6.png" alt="肖皓阳">
+      <h2>肖皓阳</h2>
+      <p>鞠躬尽瘁的团支书大人。文艺青年，爱好是听歌、看书、打球、打游戏。非常谦虚，要他的照片费了我老劲。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/MWocREnmUS7wNts.png" alt="孙丽娜">
+      <h2>孙丽娜</h2>
+      <p>爱骂人的美女（内向版）。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/HiwDF3s2kXTVZLy.png" alt="揣雯惠">
+      <h2>揣雯惠</h2>
+      <p>性格抽象，喜欢发疯，成分复杂。爱好有篮球、羽毛球、书法、桌游等等。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/UzRg8sw9SFMOxVk.png" alt="李佳鹏">
+      <h2>李佳鹏</h2>
+      <p>退伍海军，表面正派，实则闷骚。乐于助人，爱好大概是打游戏和羽毛球。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/OsxH1v3nzulZgfV.png" alt="李幼东">
+      <h2>李幼东</h2>
+      <p>积极阳光的乐天派，从来不会e，酷爱打游戏和出去玩等一切娱乐活动。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/z6AMXtBvUeLjfa2.png" alt="王凯歌">
+      <h2>王凯歌</h2>
+      <p>摸鱼小王</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/BydrM7h5AP6RxXl.png" alt="杨甜">
+      <h2>杨甜</h2>
+      <p>娇小可爱的美女姐姐。非常温柔善良。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/obWkg8SqteCrhmp.png" alt="李睿杰">
+      <h2>李睿杰</h2>
+      <p>打篮球特别强的一个哥，虽然很高大但人特别温柔有礼貌，很好说话。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/UEqkPbJiaHD6clC.png" alt="燕立昂">
+      <h2>燕立昂</h2>
+      <p>蓝胖子</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/FB9DwbTrxEd2PqQ.png" alt="唐顺安">
+      <h2>唐顺安</h2>
+      <p>性格不详（活泼），爱好睡觉。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/JPGZDxdqvzOWSyN.png" alt="李振鑫">
+      <h2>李振鑫</h2>
+      <p>喜欢游戏、运动，专研电脑知识。</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/ipDZB1lJRvuICdS.png" alt="郑智辉">
+      <h2>郑智辉</h2>
+      <p>非常可爱又有礼貌的智辉~</p>
+    </div>
+    <div class="character-card fade-in">
+      <img src="https://s2.loli.net/2023/05/29/kTozl7BUWbgR3Ej.png" alt="李宇航">
+      <h2>李宇航</h2>
+      <p>懒狗一枚，最爱运动健身，不喜欢学习</p>
+    </div>
+  </div>
+  
+  <!-- 粒子特效容器 -->
+  <div id="particle-container"></div>
+  
+  <!-- 波纹特效容器 -->
+  <div id="ripple-container"></div>
+  
+  <script>
+    // 添加粒子特效
+    function createParticle(x, y) {
+      const particle = document.createElement("span");
+      particle.classList.add("particle");
+      particle.style.top = `${y}px`;
+      particle.style.left = `${x}px`;
+      document.getElementById("particle-container").appendChild(particle);
+      setTimeout(() => {
+        particle.remove();
+      }, 1000);
+    }
+    
+    // 添加波纹特效
+    function createRipple(x, y) {
+      const ripple = document.createElement("span");
+      ripple.classList.add("ripple-effect");
+      ripple.style.top = `${y}px`;
+      ripple.style.left = `${x}px`;
+      document.getElementById("ripple-container").appendChild(ripple);
+      setTimeout(() => {
+        ripple.remove();
+      }, 500);
+    }
+    
+    // 鼠标点击事件处理
+    document.addEventListener("click", (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      
+      createParticle(x, y);
+      createRipple(x, y);
+    });
+  </script>
+</body>
+</html>

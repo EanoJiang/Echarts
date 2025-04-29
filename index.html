@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <h1>ECharts可视化展板</h1>
+        <div class="showTime">当前时间：2020年3月17-0时54分14秒</div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000); //开始运行
+            function time() {
+                clearTimeout(t); //清除定时器
+                dt = new Date();
+                var y = dt.getFullYear();
+                var mt = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var h = dt.getHours(); //获取时
+                var m = dt.getMinutes(); //获取分
+                var s = dt.getSeconds(); //获取秒
+                document.querySelector(".showTime").innerHTML =
+                    "当前时间：" + y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
+                t = setTimeout(time, 1000); //设定定时器，循环运行
+            }
+        </script>
+    </header>
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel bar">
+                <h2>模型一_效率得分值</h2>
+                  <div class="chart"></div>
+                  <div class="panel-footer"></div>
+                </div>
+                <div class="panel line">
+                  <h2>模型三_各省份的农业科技进步贡献率</h2>
+                  <div class="chart" id="lineChart"></div>
+                  <div class="panel-footer"></div>
+                </div>
+                <div class="panel pie">
+                  <h2>模型二_Malmquist变化指数省份分布</h2>
+                  <div class="radar">
+                    <div class="chart"></div>
+                    <div class="panel-footer"></div>
+                  </div>                  
+                </div>
+              </div>
+              <div class="column">
+                <div class="no">
+                  <div class="no-hd">
+                    <ul>
+                      <li>ECharts</li>
+                      <li>10</li>
+                    </ul>
+                  </div>
+                  <div class="no-bd">
+                    <ul>
+                      <li>模型展示</li>
+                      <li>调研省份</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="map">
+                  <div class="chart"></div>
+                  <div class="map1"></div>
+                  <div class="map2"></div>
+                  <div class="map3"></div>
+                  <div class="map-footer">审图号：GS（2024）0650号</div>
+                </div>
+                <style>
+                  .map-footer {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    font-size: 20px;
+                    color: #fffbfb;
+                  }
+
+                </style>
+                          
+              </div>
+              <div class="column">
+                <div class="panel bar1">
+                  <h2>模型四_十年综合得分</h2>
+                  <div class="chart"></div>
+                  <div class="panel-footer"></div>
+                </div>
+                <div class="panel line1">
+                  <h2>模型四_预测值_粒子群算法</h2>
+                  <div class="chart"></div>
+                  <div class="panel-footer"></div>
+                </div>
+                <div class="panel pie1">
+                  <h2>模型一_效率得分省份分布</h2>
+                  <div class="chart"></div>
+                  <div class="panel-footer"></div>
+                </div>
+              </div>
+            </section>
+            <script src="js/flexible.js"></script>
+            <script src="js/jquery.js"></script>
+            <script src="js/echarts.min.js"></script>
+            <script src="js/index.js"></script>
+            <script src="js/china.js"></script>
+            <script src="js/myMap.js"></script>
+          </body>
+        </html>
